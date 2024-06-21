@@ -1,5 +1,5 @@
 import React from 'react';
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { Routes, Route } from "react-router-dom";
 import Login from '../components/Auth/Login';
 import UserRegister from '../components/Users/UserRegister';
 import Profile from '../components/Users/Profile'
@@ -10,7 +10,6 @@ import OrderForm from '../components/Orders/OrderForm';
 import HomePage from "../components/Home/HomePage";
 
 const Routing = () => (
-  <BrowserRouter>
     <Routes>
       <Route index element={<HomePage />} />
       <Route path="/login" element={<Login/>} />
@@ -24,7 +23,6 @@ const Routing = () => (
       <Route path="/orders" element={<OrderList/>} />
       <Route path="/add-orders" element={<OrderForm/>} />
     </Routes>
-  </BrowserRouter>
 );
 
 export default Routing;

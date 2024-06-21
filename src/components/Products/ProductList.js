@@ -17,17 +17,6 @@ const ProductList = () => {
   // }, []);
   return (
     <div className="product-page">
-      <header className="product-header">
-        <nav className="nav-container">
-          <div className="logo">SpringFlare</div>
-          <ul className="nav-links">
-            <li><a href="#home">Home</a></li>
-            <li><a href="#products">Products</a></li>
-          </ul>
-          <button className="contact-button">Contact</button>
-        </nav>
-      </header>
-
     <section className="product-details">
       <div className="product-title">
         <h1>Elegant Evening Gown</h1>

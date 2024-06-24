@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import api, { setAuthToken } from '../../api';
+import "./OrderForm.css"
 
 const OrderForm = () => {
   const [formData, setFormData] = useState({
@@ -33,11 +34,11 @@ const OrderForm = () => {
     setToken();
   }, []);
   return (
-    <div className="min-h-screen flex items-center justify-center bg-gray-100">
+    <div className="order-form-page min-h-screen flex items-center justify-center">
       <div className="container mx-auto p-4">
-        <div className="max-w-md mx-auto bg-white rounded-lg shadow-lg overflow-hidden">
-          <div className="bg-gray-800 p-4 text-white text-center">
-            <h2 className="text-2xl font-semibold">Order Form</h2>
+        <div className="bg-white rounded-lg shadow-lg overflow-hidden md:max-w-lg mx-auto">
+          <div className="bg-gradient-to-r from-blue-500 to-teal-500 p-6 text-white text-center">
+            <h2 className="text-3xl font-bold">Add Order</h2>
           </div>
           <div className="p-6">
             <form onSubmit={handleSubmit} className="space-y-4">
@@ -49,7 +50,7 @@ const OrderForm = () => {
                   name="orderId"
                   value={formData.orderId}
                   onChange={handleChange}
-                  className="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:border-blue-500 focus:ring-blue-500"
+                  className="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring focus:border-blue-500"
                 />
               </div>
               <div>
@@ -60,7 +61,7 @@ const OrderForm = () => {
                   name="userId"
                   value={formData.userId}
                   onChange={handleChange}
-                  className="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:border-blue-500 focus:ring-blue-500"
+                  className="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring focus:border-blue-500"
                 />
               </div>
               <div>
@@ -71,7 +72,7 @@ const OrderForm = () => {
                   name="productId"
                   value={formData.productId}
                   onChange={handleChange}
-                  className="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:border-blue-500 focus:ring-blue-500"
+                  className="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring focus:border-blue-500"
                 />
               </div>
               <div>
@@ -82,7 +83,7 @@ const OrderForm = () => {
                   name="quantity"
                   value={formData.quantity}
                   onChange={handleChange}
-                  className="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:border-blue-500 focus:ring-blue-500"
+                  className="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring focus:border-blue-500"
                 />
               </div>
               <div>
@@ -93,7 +94,7 @@ const OrderForm = () => {
                   name="totalPrice"
                   value={formData.totalPrice}
                   onChange={handleChange}
-                  className="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:border-blue-500 focus:ring-blue-500"
+                  className="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring focus:border-blue-500"
                 />
               </div>
               <div>
@@ -104,7 +105,7 @@ const OrderForm = () => {
                   name="orderDate"
                   value={formData.orderDate}
                   onChange={handleChange}
-                  className="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:border-blue-500 focus:ring-blue-500"
+                  className="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring focus:border-blue-500"
                 />
               </div>
               <div>
@@ -112,7 +113,7 @@ const OrderForm = () => {
                   type="submit"
                   className="w-full bg-blue-500 hover:bg-blue-600 text-white py-2 px-4 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-opacity-50"
                 >
-                  Submit Order
+                  Add Order
                 </button>
               </div>
             </form>

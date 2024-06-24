@@ -1,0 +1,163 @@
+/* OrderList.css */
+.order-list-page {
+    font-family: 'Inter', sans-serif;
+    min-height: 100vh;
+    background-image: url('../../assets/images/oraclebg.jpeg'); 
+  background-size: cover;
+  background-position: center; 
+  background-repeat: no-repeat;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 2rem 0;
+  }
+  
+  .bg-gray-100 {
+    background-color: #f3f4f6; /* Lighter gray background */
+  }
+  
+  .bg-white {
+    background-color: #ffffff;
+  }
+  
+  .bg-gray-200 {
+    background-color: #e5e7eb; /* Light gray background for table header */
+  }
+  
+  .bg-gradient-to-r {
+    background-image: linear-gradient(to right, #4299e1, #38b2ac);
+  }
+  
+  .text-white {
+    color: #ffffff;
+  }
+  
+  .text-gray-600 {
+    color: #718096; /* Lighter gray text */
+  }
+  
+  .text-gray-100 {
+    color: #f7fafc; /* Very light gray text */
+  }
+  
+  .text-gray-900 {
+    color: #1a202c; /* Darker gray text */
+  }
+  
+  .text-center {
+    text-align: center;
+  }
+  
+  .text-left {
+    text-align: left;
+  }
+  
+  .text-sm {
+    font-size: 0.875rem;
+  }
+  
+  .text-3xl {
+    font-size: 1.875rem; /* Triple extra large text */
+  }
+  
+  .font-light {
+    font-weight: 300;
+  }
+  
+  .font-semibold {
+    font-weight: 600;
+  }
+  
+  .font-bold {
+    font-weight: 700;
+  }
+  
+  .uppercase {
+    text-transform: uppercase;
+  }
+  
+  .rounded-lg {
+    border-radius: 0.5rem;
+  }
+  
+  .shadow-lg {
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+  }
+  
+  .overflow-hidden {
+    overflow: hidden;
+  }
+  
+  .overflow-x-auto {
+    overflow-x: auto;
+  }
+  
+  .container {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+  
+  .p-4 {
+    padding: 1rem;
+  }
+  
+  .p-6 {
+    padding: 1.5rem;
+  }
+  
+  .py-3 {
+    padding-top: 0.75rem;
+    padding-bottom: 0.75rem;
+  }
+  
+  .px-6 {
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+  }
+  
+  .mb-4 {
+    margin-bottom: 1rem;
+  }
+  
+  .mt-4 {
+    margin-top: 1rem;
+  }
+  
+  .min-h-screen {
+    min-height: 100vh;
+  }
+  
+  .min-w-full {
+    min-width: 100%;
+  }
+  
+  .leading-normal {
+    line-height: 1.5;
+  }
+  
+  .border-b {
+    border-bottom-width: 1px;
+  }
+  
+  .border-gray-200 {
+    border-color: #e5e7eb;
+  }
+  
+  .hover\:bg-gray-100:hover {
+    background-color: #f7fafc;
+  }
+  
+  .whitespace-nowrap {
+    white-space: nowrap;
+  }
+  
+  .transition-transform {
+    transition-property: transform;
+  }
+  
+  .duration-300 {
+    transition-duration: 300ms;
+  }
+  

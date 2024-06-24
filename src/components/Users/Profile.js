@@ -1,7 +1,8 @@
 import React from 'react';
 import { useState,useEffect } from 'react';
 import api, { setAuthToken } from '../../api';
-import userImg from '../../assets/images/user1.png'
+import userImg from '../../assets/images/user1.jpeg'
+import './Profile.css';
 
 const Profile = () => {
   const dusers = [
@@ -27,35 +28,36 @@ const Profile = () => {
       role: 'user'
     },
     {
-      userId: 'dummyId3',
-      userName: 'dummyUser3',
-      email: 'dummy3@example.com',
-      password: 'dummyPassword3',
+      userId: 'dummyId4',
+      userName: 'dummyUser4',
+      email: 'dummy4@example.com',
+      password: 'dummyPassword4',
       role: 'user'
     }
   ];
-  // const [users, setUsers] = useState([]);
+  const [users, setUsers] = useState([]);
 
   // useEffect(() => {
   //   const fetchUsers = async () => {
   //     const token = process.env.REACT_APP_TOKEN;
   //     setAuthToken(token);
   //     const response = await api.get('/users');
+  //     console.log(response.data);
   //     setUsers(response.data);
   //   };
-  //   console.log(users);
   //   fetchUsers();
+  //   console.log(users);
   // }, []);
   return (
-    <div className="min-h-screen flex items-center justify-center bg-gray-100">
+    <div className="profile-page min-h-screen bg-gray-100">
       <div className="container mx-auto p-4">
         <div className="bg-white rounded-lg shadow-lg overflow-hidden">
-          <div className="bg-gray-800 p-4 text-white text-center">
-            <h2 className="text-2xl font-semibold">User Profiles</h2>
+          <div className="bg-gradient-to-r from-blue-500 to-teal-500 p-6 text-white text-center">
+            <h2 className="text-3xl font-bold">User Profiles</h2>
           </div>
-          <div className="p-6 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
-            {dusers.map((user, index) => (
-              <div key={index} className="bg-gray-50 rounded-lg shadow-md p-4">
+          <div className="p-8 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+            {dusers?.map((user, index) => (
+              <div key={index} className="bg-gray-50 rounded-lg shadow-md p-6 transform hover:-translate-y-2 transition-transform duration-300">
                 <div className="flex items-center mb-4">
                   <img
                     className="w-16 h-16 rounded-full mr-4"

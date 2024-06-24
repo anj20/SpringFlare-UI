@@ -1,5 +1,6 @@
 import React, {useState, useEffect} from 'react';
 import api, { setAuthToken } from '../../api';
+import "./UserRegister.css";
 const UserRegister = () => {
   const [formData, setFormData] = useState({
     userName: '',
@@ -32,54 +33,63 @@ const UserRegister = () => {
   }, []);
 
   return (
-    <div className="min-h-screen flex items-center justify-center bg-[#1E2A38]">
-      <div className="max-w-md w-full bg-white rounded-lg overflow-hidden md:max-w-xl shadow-lg">
-        <div className="md:flex">
-          <div className="w-full p-4 px-6 py-8">
-            <h2 className="text-xl font-semibold text-[#333333] mb-2 text-center">User Registration</h2>
-            <form className="space-y-4" onSubmit={handleSubmit}>
+    <div className="register-user-page min-h-screen flex items-center justify-center">
+      <div className="container mx-auto p-4">
+        <div className="bg-white rounded-lg shadow-lg overflow-hidden md:max-w-lg mx-auto">
+          <div className="bg-gradient-to-r from-blue-500 to-teal-500 p-6 text-white text-center">
+            <h2 className="text-3xl font-bold">Register User</h2>
+          </div>
+          <div className="p-6">
+            <form onSubmit={handleSubmit} className="space-y-4">
               <div>
-                <label htmlFor="userName" className="block text-sm font-medium text-[#BBBBBB]">Username</label>
+                <label htmlFor="username" className="block text-sm font-medium text-gray-700">Username</label>
                 <input
-                  id="userName"
+                  id="username"
                   type="text"
-                  value={formData.userName}
+                  name="username"
+                  value={formData.username}
                   onChange={handleChange}
-                  className="mt-1 block w-full px-3 py-2 border border-[#CCCCCC] rounded-md shadow-sm focus:outline-none focus:border-[#008080] focus:ring-[#008080]"
+                  className="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring focus:border-blue-500"
                 />
               </div>
               <div>
-                <label htmlFor="email" className="block text-sm font-medium text-[#BBBBBB]">Email</label>
+                <label htmlFor="email" className="block text-sm font-medium text-gray-700">Email</label>
                 <input
                   id="email"
                   type="email"
+                  name="email"
                   value={formData.email}
                   onChange={handleChange}
-                  className="mt-1 block w-full px-3 py-2 border border-[#CCCCCC] rounded-md shadow-sm focus:outline-none focus:border-[#008080] focus:ring-[#008080]"
+                  className="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring focus:border-blue-500"
                 />
               </div>
               <div>
-                <label htmlFor="password" className="block text-sm font-medium text-[#BBBBBB]">Password</label>
+                <label htmlFor="password" className="block text-sm font-medium text-gray-700">Password</label>
                 <input
                   id="password"
                   type="password"
+                  name="password"
                   value={formData.password}
                   onChange={handleChange}
-                  className="mt-1 block w-full px-3 py-2 border border-[#CCCCCC] rounded-md shadow-sm focus:outline-none focus:border-[#008080] focus:ring-[#008080]"
+                  className="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring focus:border-blue-500"
                 />
               </div>
               <div>
-                <label htmlFor="role" className="block text-sm font-medium text-[#BBBBBB]">Role</label>
+                <label htmlFor="role" className="block text-sm font-medium text-gray-700">Role</label>
                 <input
                   id="role"
                   type="text"
+                  name="role"
                   value={formData.role}
                   onChange={handleChange}
-                  className="mt-1 block w-full px-3 py-2 border border-[#CCCCCC] rounded-md shadow-sm focus:outline-none focus:border-[#008080] focus:ring-[#008080]"
+                  className="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring focus:border-blue-500"
                 />
               </div>
               <div>
-                <button type="submit" className="w-full bg-[#008080] hover:bg-[#006666] text-white py-2 px-4 rounded-md focus:outline-none focus:ring-2 focus:ring-[#008080] focus:ring-opacity-50">
+                <button
+                  type="submit"
+                  className="w-full bg-blue-500 hover:bg-blue-600 text-white py-2 px-4 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-opacity-50"
+                >
                   Register
                 </button>
               </div>

@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import api, {setAuthToken} from '../../api';
 import './ProductList.css';
 import user1Image from '../../assets/images/user1.jpeg';
-import heroImg from "../../assets/images/heroimg.png";
+// import heroImg from "../../assets/images/heroimg.png";
 
 const ProductList = () => {
   const [products , setProducts] = useState([
@@ -67,17 +67,17 @@ const ProductList = () => {
       "price": 7999.99
     }
   ]);
-  // useEffect(() => {
-  //   const fetchProducts = async () => {
-  //     const token = process.env.REACT_APP_TOKEN;
-  //     setAuthToken(token);
-  //     const response = await api.get('/products');
-  //     console.log(response);
-  //     setProducts(response.data);
-  //   };
-  //   fetchProducts();
-  //   console.log(products);
-  // }, []);
+  useEffect(() => {
+    const fetchProducts = async () => {
+      const token = process.env.REACT_APP_TOKEN;
+      setAuthToken(token);
+      const response = await api.get('/products');
+      console.log(response);
+      setProducts(response.data);
+    };
+    fetchProducts();
+    console.log(products);
+  }, []);
   return (
     <div className="products-page min-h-screen bg-gray-100">
       <div className="container mx-auto p-4">

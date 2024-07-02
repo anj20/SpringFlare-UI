@@ -42,12 +42,12 @@ const UserRegister = () => {
           <div className="p-6">
             <form onSubmit={handleSubmit} className="space-y-4">
               <div>
-                <label htmlFor="username" className="block text-sm font-medium text-gray-700">Username</label>
+                <label htmlFor="userName" className="block text-sm font-medium text-gray-700">Username</label>
                 <input
-                  id="username"
+                  id="userName"
                   type="text"
-                  name="username"
-                  value={formData.username}
+                  name="userName"
+                  value={formData.userName}
                   onChange={handleChange}
                   className="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring focus:border-blue-500"
                 />

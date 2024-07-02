@@ -30,20 +30,20 @@ const OrderList = () => {
     }
   ]);
 
-  // useEffect(() => {
-  //   const fetchOrders = async () => {
-  //     const token = process.env.REACT_APP_TOKEN;
-  //     setAuthToken(token);
-  //     try {
-  //       const response = await api.get('/orders');
-  //       setOrders(response.data);
-  //     } catch (error) {
-  //       console.error('Error fetching orders:', error);
-  //       // Handle error state or alert the user
-  //     }
-  //   };
-  //   fetchOrders();
-  // }, []);
+  useEffect(() => {
+    const fetchOrders = async () => {
+      const token = process.env.REACT_APP_TOKEN;
+      setAuthToken(token);
+      try {
+        const response = await api.get('/orders');
+        setOrders(response.data);
+      } catch (error) {
+        console.error('Error fetching orders:', error);
+        // Handle error state or alert the user
+      }
+    };
+    fetchOrders();
+  }, []);
 
   return (
     <div className="order-list-page min-h-screen bg-gray-100">

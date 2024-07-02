@@ -4,7 +4,6 @@ import "./OrderForm.css"
 
 const OrderForm = () => {
   const [formData, setFormData] = useState({
-    orderId: '',
     userId: '',
     productId: '',
     quantity: '',
@@ -19,10 +18,10 @@ const OrderForm = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const response = await api.post('/users', formData);
-      console.log('User registered:', response.data);
+      const response = await api.post('/orders', formData);
+      console.log('Order registered:', response.data);
     } catch (error) {
-      console.error('Error registering user:', error);
+      console.error('Error registering orders:', error);
     }
   };
 
@@ -42,17 +41,6 @@ const OrderForm = () => {
           </div>
           <div className="p-6">
             <form onSubmit={handleSubmit} className="space-y-4">
-              <div>
-                <label htmlFor="orderId" className="block text-sm font-medium text-gray-700">Order ID</label>
-                <input
-                  id="orderId"
-                  type="text"
-                  name="orderId"
-                  value={formData.orderId}
-                  onChange={handleChange}
-                  className="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring focus:border-blue-500"
-                />
-              </div>
               <div>
                 <label htmlFor="userId" className="block text-sm font-medium text-gray-700">User ID</label>
                 <input

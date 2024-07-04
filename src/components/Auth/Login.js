@@ -14,33 +14,36 @@ const LoginUser = () => {
   const handleChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
-
+  const findUser = (users, formData) => {
+    if (!Array.isArray(users) || !formData || !formData.username || !formData.password) {
+      return null;
+    }
+    const user = users.find(user => {
+      return String(user.userName) === String(formData.username) && String(user.password) === String(formData.password)
+    });
+    return user;
+  };
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
       const token = process.env.REACT_APP_TOKEN;
       setAuthToken(token);
-      const response = await api.post('/users/login', formData);
-      console.log('User logged in:', response.data);
-      navigate('/dashboard');
+      const response = await api.get('/users');
+      const users = response.data;
+      const user = findUser(users, formData);
+      if (user) {
+        localStorage.setItem('user', JSON.stringify(user));
+        console.log('User logged in:', user);
+        navigate('/');
+        window.location.reload();
+      } 
+      else {
+        console.error('Login error: Invalid credentials');
+      }
     } catch (error) {
       console.error('Login error:', error);
     }
   };
-
-  useEffect(() => {
-    const fetchAccessTokenAndLogin = async () => {
-      const token = process.env.REACT_APP_TOKEN;
-      setAuthToken(token);
-      try {
-        const response = await api.get('/users');
-        console.log('Access token and user data fetched:', response.data);
-      } catch (error) {
-        console.error('Error fetching user data:', error);
-      }
-    };
-    fetchAccessTokenAndLogin();
-  }, []);
 
   return (
     <div className="login-user-page min-h-screen flex items-center justify-center">

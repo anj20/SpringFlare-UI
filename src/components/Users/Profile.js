@@ -33,6 +33,18 @@ const Profile = () => {
     password: 'dummyPassword4',
     role: 'user'
   }]);
+  const userImages = [
+    'https://randomuser.me/api/portraits/women/1.jpg',
+    'https://randomuser.me/api/portraits/women/2.jpg',
+    'https://randomuser.me/api/portraits/men/3.jpg',
+    'https://randomuser.me/api/portraits/men/4.jpg',
+    'https://randomuser.me/api/portraits/men/5.jpg',
+    'https://randomuser.me/api/portraits/women/6.jpg',
+    'https://randomuser.me/api/portraits/men/7.jpg',
+    'https://randomuser.me/api/portraits/women/8.jpg',
+    'https://randomuser.me/api/portraits/men/9.jpg',
+    'https://randomuser.me/api/portraits/women/10.jpg'
+  ];
 
   useEffect(() => {
     const fetchUsers = async () => {
@@ -57,8 +69,8 @@ const Profile = () => {
               <div key={index} className="bg-gray-50 rounded-lg shadow-md p-6 transform hover:-translate-y-2 transition-transform duration-300">
                 <div className="flex items-center mb-4">
                   <img
-                    className="w-16 h-16 rounded-full mr-4"
-                    src={userImg}
+                    className="w-16 h-16 rounded-full border-2 border-blue-500 mr-4"
+                    src={userImages[index % userImages.length]}
                     alt="User Avatar"
                   />
                   <div>
@@ -68,7 +80,7 @@ const Profile = () => {
                 </div>
                 <div>
                   <p className="text-gray-700 font-semibold mb-2">Role:</p>
-                  <p className="text-gray-600">{user.role}</p>
+                  <p className="inline-block bg-blue-500 text-white text-xs font-bold px-2 py-1 rounded-full">{user.role}</p>
                 </div>
               </div>
             ))}

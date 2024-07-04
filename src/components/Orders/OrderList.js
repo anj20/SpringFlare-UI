@@ -100,7 +100,7 @@ const OrderList = () => {
               </thead>
               <tbody className="text-gray-600 text-sm font-light">
                 {orders.map((order) => (
-                  <tr key={order.orderId} className="border-b border-gray-200 hover:bg-gray-100">
+                  <tr key={order.orderId} className="border-b border-gray-200 hover:bg-gray-100 order-row">
                     <td className="py-3 px-6 text-left whitespace-nowrap">{order.orderId}</td>
                     <td className="py-3 px-6 text-left">{truncateText(order.userId, 10)}</td>
                     <td className="py-3 px-6 text-left">{truncateText(order.productId, 10)}</td>

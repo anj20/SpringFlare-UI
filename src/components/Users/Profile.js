@@ -69,7 +69,7 @@ const Profile = () => {
               <div key={index} className="bg-gray-50 rounded-lg shadow-md p-6 transform hover:-translate-y-2 transition-transform duration-300">
                 <div className="flex items-center mb-4">
                   <img
-                    className="w-16 h-16 rounded-full border-2 border-blue-500 mr-4"
+                    className="w-16 h-16 profile-image rounded-full border-2 border-blue-500 mr-4"
                     src={userImages[index % userImages.length]}
                     alt="User Avatar"
                   />
@@ -80,7 +80,7 @@ const Profile = () => {
                 </div>
                 <div>
                   <p className="text-gray-700 font-semibold mb-2">Role:</p>
-                  <p className="inline-block bg-blue-500 text-white text-xs font-bold px-2 py-1 rounded-full">{user.role}</p>
+                  <p className="inline-block role-tag bg-blue-500 text-white text-xs font-bold px-2 py-1 rounded-full">{user.role}</p>
                 </div>
               </div>
             ))}

@@ -1,6 +1,7 @@
 import React, {useState, useEffect} from 'react';
 import api, { setAuthToken } from '../../api';
 import "./UserRegister.css";
+import { useNavigate } from 'react-router-dom';
 const UserRegister = () => {
   const [formData, setFormData] = useState({
     userName: '',
@@ -15,11 +16,16 @@ const UserRegister = () => {
       [id]: value
     }));
   };
+  const navigate=useNavigate();
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
       const response = await api.post('/users', formData);
       console.log('User registered:', response.data);
+      localStorage.setItem('user', JSON.stringify(response.data));
+      navigate('/');
+      window.location.reload();
+
     } catch (error) {
       console.error('Error registering user:', error);
     }

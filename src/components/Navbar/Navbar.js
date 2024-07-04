@@ -1,9 +1,9 @@
 import React, {useState, useEffect} from 'react';
-import { Link , useNavigate } from 'react-router-dom';
+import { Link  } from 'react-router-dom';
 import './Navbar.css';
 
 const Navbar = () => {
-  const [isAuthenticated, setIsAuthenticated] = useState(true);
+  const [isAuthenticated, setIsAuthenticated] = useState(false);
 
   useEffect(() => {
     const user = localStorage.getItem('user'); 
@@ -11,11 +11,9 @@ const Navbar = () => {
       setIsAuthenticated(true);
     }
   }, []);
-  const navigate =useNavigate();
   const handleLogout = () => {
     localStorage.removeItem('user');
     setIsAuthenticated(false);
-    navigate('/login');
   };
 
   return (
@@ -31,7 +29,7 @@ const Navbar = () => {
             <li><Link to="/add-orders">Add Order</Link></li>
           </ul>
           <div className="auth-buttons">
-            <Link style={{background:"red"}}><button onClick={handleLogout}>Logout</button></Link>
+            <Link to="/login" style={{background:"red"}}><button onClick={handleLogout}>Logout</button></Link>
           </div>
         </>
       ) : (

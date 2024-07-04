@@ -87,7 +87,7 @@ const ProductList = () => {
           </div>
           <div className="p-8 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
             {products.map((product) => (
-              <div key={product.id} className="bg-gray-50 rounded-lg shadow-md p-6 transform hover:-translate-y-2 transition-transform duration-300">
+              <div key={product.id} className="bg-gray-50 rounded-lg shadow-md p-6 transform hover:-translate-y-2 transition-transform duration-300 product-card">
                 <div className="mb-4">
                   <h3 className="text-xl font-semibold text-gray-900">{product.name}</h3>
                   <p className="text-gray-600">{product.description}</p>
